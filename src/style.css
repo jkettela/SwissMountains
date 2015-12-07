@@ -1,0 +1,24 @@
+.top {
+    -fx-background-color: red;
+    -fx-max-height: 50;
+    -fx-min-height: 50;
+}
+
+.left {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color:  #000000;
+}
+.right {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color:  #000000;
+}
+.splitpane1 {
+    -fx-box-border: transparent;
+    -fx-border-color:  transparent;
+    -fx-inner-border: transparent;
+}
+.splitpane2 {
+    -fx-box-border: transparent;
+    -fx-inner-border: transparent;
+    -fx-border-color:  transparent;
+}

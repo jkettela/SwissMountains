@@ -20,9 +20,12 @@ public class SwissMountain extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        primaryStage.setTitle("SwissMountains - Jerome Kettela");
         Group root = new Group();
         Scene scene = new Scene(root, 1000, 800, Color.WHITE);
+        String stylesheet = getClass().getResource("style.css").toExternalForm();
+        scene.getStylesheets().add(stylesheet);
+        primaryStage.setTitle("SwissMountains - Jerome Kettela");
+
 
         SplitPane splitPane = new SplitPane();
         splitPane.prefWidthProperty().bind(scene.widthProperty());
@@ -30,6 +33,7 @@ public class SwissMountain extends Application {
         splitPane.setOrientation(Orientation.HORIZONTAL);
 
         VBox topArea = new VBox(10);
+        topArea.getStyleClass().add("top");
         HBox rowBox = new HBox(20);
         final Text topText = TextBuilder.create()
                 .text("top ")
@@ -39,17 +43,16 @@ public class SwissMountain extends Application {
 
         rowBox.getChildren().add(topText);
         topArea.getChildren().add(rowBox);
-        topArea.setMinWidth(50.0);
-        topArea.setMaxWidth(50.0);
 
 
         SplitPane splitPane2 = new SplitPane();
         splitPane2.setOrientation(Orientation.VERTICAL);
         splitPane2.prefWidthProperty().bind(scene.widthProperty());
         splitPane2.prefHeightProperty().bind(scene.heightProperty());
-
+        splitPane.getStyleClass().add("splitpane1");
+        splitPane2.getStyleClass().add("splitpane2");
         HBox leftArea = new HBox();
-
+        leftArea.getStyleClass().add("left");
         final Text upperRight = TextBuilder.create()
                 .text("left")
                 .font(Font.font(null, FontWeight.BOLD, 35))
@@ -57,7 +60,7 @@ public class SwissMountain extends Application {
         leftArea.getChildren().add(upperRight);
 
         HBox rightArea = new HBox();
-
+        rightArea.getStyleClass().add("right");
         final Text lowerRight = TextBuilder.create()
                 .text("Right")
                 .font(Font.font(null, FontWeight.BOLD, 35))
